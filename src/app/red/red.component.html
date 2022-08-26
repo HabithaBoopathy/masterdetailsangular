@@ -1,0 +1,14 @@
+<p>red works!</p>
+<td>
+    <div class="form-group">
+      <label>UT</label>
+      <br />
+      <select  [(ngModel)]="details.red">
+        <option>Select</option>
+        <option *ngFor="let ob of reds" [value]="ob.red">
+          {{ob.red}}
+        </option>
+      </select>
+    </div>
+  </td>
+        

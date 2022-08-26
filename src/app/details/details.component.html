@@ -1,0 +1,69 @@
+<p>details works!</p>
+<p>master works!</p>
+<div>
+  <h1> MASTER DETAILS</h1>
+</div>
+<style>
+  td {
+    padding: 25px;
+  }
+</style>
+<table>
+      <tr>
+    <td>
+      <div class="form-group">
+        <label>S.No</label>
+        <br />
+        <input type="text" id="serialNo" class="form-control" style="display: inline" [(ngModel)]="details.serialNo" />
+      </div>
+    </td>
+    <td>
+      <div class="dropdown-input">
+        <label>UNIT</label>
+        <br />
+        <select  [(ngModel)]="details.measure">
+          <option>Select</option>
+          <option *ngFor="let o of measures" [value]="o.name">
+            {{o.name}}
+          </option>
+        </select>
+      </div>
+    </td>
+    <td>
+      <div class="dropdown-input">
+        <label>UT</label>
+        <br />
+        <select  [(ngModel)]="details.red">
+          <option>Select</option>
+          <option *ngFor="let ob of reds" [value]="ob.red">
+            {{ob.red}}
+          </option>
+        </select>
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <label>Particulars</label>
+        <br />
+        <input type="text" id="particulars" class="form-control" style="display: inline" [(ngModel)]="details.particulars" />
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <label>Quantity</label>
+        <br />
+        <input type="text" id="quantity" class="form-control" style="display: inline" [(ngModel)]="details.quantity" />
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <button type="button" class="btn btn-block btn-primary" (click)="onClick()"> ADD </button>
+      </div>
+    </td>
+     <td>
+      <!-- <div class="form-group"> -->
+        <button type="button" class="btn btn-danger" (click)="deleteDetails(details)"> CLEAR </button>
+      <!-- </div> -->
+    </td> 
+  </tr>
+</table>

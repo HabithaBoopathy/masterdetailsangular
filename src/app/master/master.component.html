@@ -1,0 +1,184 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body> -->
+<div>
+  <h1> MASTER DETAILS</h1>
+</div>
+<style>
+
+  .info-table td {
+    padding: 25px;
+  } 
+
+
+
+  table.table-result  {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-result td, .table-result th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+</style> 
+<table  class="table table-bordered">
+  <tr>
+    <td>
+      <div class="form-group">
+        <div class="col-xs-6">
+        <label>Master No</label>
+        <br />
+        <input type="text" id="masterNo" class="form-control" [(ngModel)]="master.masterNo"  />
+      </div>
+    </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <div class="col-xs-6">
+        <label>Date</label>
+        <br />
+        <input type="text" id="masterDate" class="form-control" style="display: inline" [(ngModel)]="master.masterDate" />
+      </div>
+    </div>
+    </td>
+
+
+    <td>
+      <div class="dropdown-input">
+        <label>STATUS</label>
+        <br/>
+        <select  [(ngModel)]="master.black">
+          <option>Select</option>
+          <option *ngFor="let o of blacks" [value]="o.name">
+            {{o.name}}
+          </option>
+        </select>
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <div class="col-xs-6">
+        <label>Customer Name</label>
+        <br />
+        <input type="text" id="customerName" class="form-control" style="display: inline" [(ngModel)]="master.customerName" />
+      </div>
+    </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="form-group">
+        <button type="button" class="btn btn-primary" (click)="addNew()"> ADD</button>
+        <button type="button" class="btn btn-primary" (click)="onRegister()"> Save </button>
+      </div>
+   
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="form-group">
+        <div class="col-xs-6">
+        <label>S.No</label>
+        <br />
+        <input type="text" id="serialNo" class="form-control" style="display: inline" [(ngModel)]="details.serialNo" />
+      </div>
+    </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <label>UNIT</label>
+        <br />
+        <select  [(ngModel)]="details.measure">
+          <option>Select</option>
+          <option *ngFor="let measure of measures" [value]="measure.name">
+            {{measure.name}}
+          </option>
+        </select>
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <label>MEASURES</label>
+        <br />
+        <select  [(ngModel)]="details.red">
+          <option>Select</option>
+          <option *ngFor="let ob of reds" [value]="ob.red">
+            {{ob.red}}
+          </option>
+        </select>
+      </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <div class="col-xs-6">
+        <label>Particulars</label>
+        <br />
+        <input type="text" id="particulars" class="form-control" style="display: inline" [(ngModel)]="details.particulars" />
+      </div>
+    </div>
+    </td>
+    <td>
+      <div class="form-group">
+        <div class="col-xs-6">
+        <label>Quantity</label>
+        <br />
+        <input type="text" id="quantity" class="form-control" style="display: inline" [(ngModel)]="details.quantity" />
+      </div>
+    </div>
+    </td>
+    <tr>
+    <td>
+      <div class="form-group">
+        <button type="button" class="btn btn-primary" (click)="onClick()"> ADD </button>
+      </div>
+    </td>
+   </tr>
+   <!-- <td>
+      <div class="form-group">
+        <button type="button" class="btn btn-block btn-primary" (click)="onClear(details.serialNo)"> CLEAR </button>
+      </div>
+    </td>  -->
+
+</table>
+
+<hr>
+<br/>
+<table class="table-result">
+<tr>
+  <th>MasterNo</th>
+  <th>S.No</th>
+  <th>Unit</th>
+  <th>Measures</th>
+  <th>Particulars</th>
+  <th>Quantity</th>
+  <th> </th>
+  </tr>
+
+  <tr *ngFor="let details of detailses">
+    <td>{{1001}}</td>
+    <td>{{details.serialNo}}</td>
+    <td>{{details.measure}}</td>
+    <td>{{details.red}}</td>
+    <td>{{details.particulars}}</td>
+    <td>{{details.quantity}}</td>
+   <td>
+    <!-- <div class="form-group"> -->
+        <button type="button" class="btn btn-danger" (click)="deleteDetails(details.serialNo)"> CLEAR </button>
+      <!-- </div> -->
+    </td> 
+    
+  </tr>
+  </table>
+<!-- </body>
+</html> -->
